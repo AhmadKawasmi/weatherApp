@@ -8,7 +8,6 @@ const getWeather = async function(city) {
     return weather
 }
 
-
 btn.addEventListener('click', async function() {
     const city = input.value
     try {
