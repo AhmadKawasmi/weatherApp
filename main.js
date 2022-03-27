@@ -3,10 +3,11 @@ const btn = document.getElementById('submit')
 const body = document.querySelector('body')
 
 const getWeather = async function(city) {
-    const weather = await $.git(`https://rami-weather.herokuapp.com/weather/${city}`)
+    const weather = await $.get(`https://rami-weather.herokuapp.com/weather/${city}`)
     console.log(weather);
     return weather
 }
+
 
 btn.addEventListener('click', async function() {
     const city = input.value
