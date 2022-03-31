@@ -36,14 +36,14 @@ const renderWeather = function (weather,city) {
               addToFav(weather.name)
               favBtn.innerHTML = '&#9733;'
               favBtn.style.color = "yellow"
-              header.style.gridTemplateColumns = '2fr 1fr 1fr'
+              header.style.gridTemplateColumns = '3fr 1fr 1fr'
         const removeFromFavBtn = document.createElement('span')
                     removeFromFavBtn.classList.add('rmvBtn')
                     removeFromFavBtn.innerHTML = '&#10008;'
              header.append(removeFromFavBtn)
         removeFromFavBtn.addEventListener('click',function () {
             removeFav()
-            header.style.gridTemplateColumns = '1fr 1fr'
+            header.style.gridTemplateColumns = '2fr 1fr'
             removeFromFavBtn.style.display = 'none'
             favBtn.style.color = 'black'
             favBtn.innerHTML = '&#9734;'
@@ -76,8 +76,12 @@ const getFavCity = async function () {
 }
 
 btn.addEventListener('click', async function() {
-    const city = input.value
+    if (input.value == "") {
+        alert('please choose a city')
+    }else{
+        const city = input.value
         const weather = await getWeather(city)
         input.value = ''
         renderWeather(weather)
+    }
 })
