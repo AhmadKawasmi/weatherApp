@@ -17,12 +17,13 @@ const getWeather = async function(city) {
 }
 
 const addToFav = function (city) {
-    localStorage.setItem('favCity',city)
+    localStorage.setItem('favCity' ,city)
 }
 
 const removeFav = function (city) {
     localStorage.removeItem('favCity',city)
 }
+
 
 const renderWeather = function (weather,city) {
     const cityContainer = document.createElement('div')
