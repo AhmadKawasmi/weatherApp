@@ -72,7 +72,7 @@ const getFavCity = async function () {
     const city = localStorage.getItem("favCity")
     if(city){
         const weather = await getWeather(city)
-        renderWeather(city)
+        renderWeather(weather)
     }
 }
 
@@ -86,3 +86,6 @@ btn.addEventListener('click', async function() {
         renderWeather(weather)
     }
 })
+
+
+getFavCity()
