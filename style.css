@@ -70,7 +70,7 @@ body{
     font-size: 35px;
     border: none;
     background-color: transparent;
-    transition: all 0.3s;
+    transition: all 0.3s  ease;
     cursor: pointer;
 }
 
